@@ -1865,21 +1865,25 @@ _PointF._fields_ = [
 assert sizeof(_PointF) == 8, sizeof(_PointF)
 assert alignment(_PointF) == 4, alignment(_PointF)
 class _ColorSpacePoint(Structure):
-    pass
-_ColorSpacePoint._fields_ = [
-    ('x', c_float),
-    ('y', c_float),
-]
+    _fields_ = [
+        ('x', c_float),
+        ('y', c_float),
+    ]
+    def __repr__(self):
+        return f"<_ColorSpacePoint x={self.x} y={self.y}>"
+
 assert sizeof(_ColorSpacePoint) == 8, sizeof(_ColorSpacePoint)
 assert alignment(_ColorSpacePoint) == 4, alignment(_ColorSpacePoint)
 class _RectF(Structure):
-    pass
-_RectF._fields_ = [
-    ('x', c_float),
-    ('y', c_float),
-    ('Width', c_float),
-    ('Height', c_float),
-]
+    _fields_ = [
+        ('x', c_float),
+        ('y', c_float),
+        ('Width', c_float),
+        ('Height', c_float),
+    ]
+    def __repr__(self):
+        return f"<_RectF x={self.x} y={self.y} Width={self.Width} Height={self.Height}>"
+
 assert sizeof(_RectF) == 16, sizeof(_RectF)
 assert alignment(_RectF) == 4, alignment(_RectF)
 class IMultiSourceFrameArrivedEventArgs(comtypes.IUnknown):
@@ -1904,11 +1908,13 @@ IMultiSourceFrameArrivedEventArgs._methods_ = [
 ##
 
 class _DepthSpacePoint(Structure):
-    pass
-_DepthSpacePoint._fields_ = [
-    ('x', c_float),
-    ('y', c_float),
-]
+    _fields_ = [
+        ('x', c_float),
+        ('y', c_float),
+    ]
+    def __repr__(self):
+        return f"<_DepthSpacePoint x={self.x} y={self.y}>"
+
 assert sizeof(_DepthSpacePoint) == 8, sizeof(_DepthSpacePoint)
 assert alignment(_DepthSpacePoint) == 4, alignment(_DepthSpacePoint)
 _JointOrientation._fields_ = [
